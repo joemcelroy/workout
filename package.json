@@ -1,8 +1,13 @@
 {
   "author": "Siavash",
-  "name": "workoutapp-client",
-  "version": "0.0.1-SNAPSHOT",
-  "dependencies": {},
+  "name": "pinpoint-client",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">= 0.8.4"
+  },
+  "dependencies": {
+    "connect":"*"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "browserify": "~1.17.x",
@@ -10,8 +15,6 @@
     "grunt-lib-contrib": "~0.6.x",
     "grunt-regarde": "~0.1.1",
     "karma-coverage": "0.0.1",
-    "karma-coffee-preprocessor": "0.0.1",
-    "grunt-browserify": "~1.0.2",
-    "grunt-contrib-coffee": "~0.7.0"
+    "karma-coffee-preprocessor": "0.0.1"
   }
 }
