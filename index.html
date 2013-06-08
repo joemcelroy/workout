@@ -72,7 +72,7 @@
 
       <div class="workout-details">
         <div class="details">
-          <p>{{getPreviousResult()}} Last week</p>
+          <p>{{getPreviousResult(selectedWorkout.weightRef)}} last week</p>
         </div>
         <img ng-src="{{exercises[selectedWorkout.exercise].beforeImg}}" class="before"/>
         <img ng-src="{{exercises[selectedWorkout.exercise].afterImg}}" class="after"/>

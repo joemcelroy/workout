@@ -62,10 +62,20 @@ angular.module('workout', [])
     $scope.currentRep = 0
 
   $scope.getPreviousResult = (repRef) ->
-    if repRef?
-      "90KG"
+    if $scope.db[repRef]?
+      total = 0
+      min = $scope.db[repRef][0]
+      max = 0
+      for recording in $scope.db[repRef]
+        if recording > max
+          max = recording
+        if recording < min
+          min = recording
+        total+= recording
+
+      return "#{Math.ceil(total / $scope.db[repRef].length,0)}KG (min was #{min}, max was #{max})"
     else 
-      "70KG"
+      "No recording"
 
   $scope.getResult = (ref,index) ->
     if $scope.db[ref]?[index]?

@@ -70,6 +70,81 @@
         name: "Seated Calf Raise",
         beforeImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/152/Male/m/152_1.jpg",
         afterImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/152/Male/m/152_2.jpg"
+      },
+      15: {
+        name: "Dumbbell Bent Over Row",
+        beforeImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/16/Male/m/16_1.jpg",
+        afterImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/16/Male/m/16_2.jpg"
+      },
+      16: {
+        name: "Wide-Grip Lat Pulldown",
+        beforeImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/10/Male/m/10_1.jpg",
+        afterImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/10/Male/m/10_2.jpg"
+      },
+      17: {
+        name: "Straight-Arm Pulldown",
+        beforeImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/11/Male/m/11_1.jpg",
+        afterImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/11/Male/m/11_2.jpg"
+      },
+      18: {
+        name: "Seated Cable Rows",
+        beforeImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/45/Male/m/45_1.jpg",
+        afterImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/45/Male/m/45_2.jpg"
+      },
+      19: {
+        name: "Barbell Curl",
+        beforeImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/169/Male/m/169_1.jpg",
+        afterImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/169/Male/m/169_2.jpg"
+      },
+      20: {
+        name: "Incline Dumbbell Curl",
+        beforeImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/114/Male/m/114_1.jpg",
+        afterImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/114/Male/m/114_2.jpg"
+      },
+      21: {
+        name: "Concentration Curls",
+        beforeImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/136/Male/m/136_1.jpg",
+        afterImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/136/Male/m/136_2.jpg"
+      },
+      22: {
+        name: "Bent-Knee Hip Raise",
+        beforeImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/118/Male/m/118_1.jpg",
+        afterImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/118/Male/m/118_2.jpg"
+      },
+      23: {
+        name: "Cable Crunch",
+        beforeImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/163/Male/m/163_1.jpg",
+        afterImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/163/Male/m/163_2.jpg"
+      },
+      24: {
+        name: "Cable Oblique Crunch",
+        beforeImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/163/Male/m/163_1.jpg",
+        afterImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/163/Male/m/163_2.jpg"
+      },
+      25: {
+        name: "Dumbbell Shoulder Press",
+        beforeImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/328/Male/m/328_1.jpg",
+        afterImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/328/Male/m/328_2.jpg"
+      },
+      26: {
+        name: "Side Lateral Raise",
+        beforeImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/373/Male/m/373_1.jpg",
+        afterImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/373/Male/m/373_2.jpg"
+      },
+      27: {
+        name: "Standing Dumbbell Upright Row",
+        beforeImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/368/Male/m/368_1.jpg",
+        afterImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/368/Male/m/368_2.jpg"
+      },
+      28: {
+        name: "Smith Machine Shrug",
+        beforeImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/134/Male/m/134_1.jpg",
+        afterImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/134/Male/m/134_2.jpg"
+      },
+      29: {
+        name: "Smith Machine Shrug",
+        beforeImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/134/Male/m/134_1.jpg",
+        afterImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/134/Male/m/134_2.jpg"
       }
     },
     workouts: [
@@ -149,8 +224,6 @@
         ]
       }, {
         name: "Day 71 - Chest, Triceps & Calfs",
-        week: 11,
-        type: 1,
         exercises: [
           {
             exercise: 6,
@@ -158,13 +231,13 @@
             weightRef: "64-1",
             reps: [
               {
-                name: "9 - 11"
+                name: "6 - 8"
               }, {
-                name: "9 - 11"
+                name: "6 - 8"
               }, {
-                name: "9 - 11"
+                name: "6 - 8"
               }, {
-                name: "9 - 11 Rest Pause"
+                name: "6 - 8 Rest Pause"
               }
             ]
           }, {
@@ -173,11 +246,11 @@
             weightRef: "64-2",
             reps: [
               {
-                name: "9 - 11"
+                name: "6 - 8"
               }, {
-                name: "9 - 11"
+                name: "6 - 8"
               }, {
-                name: "9 - 11 Rest Pause"
+                name: "6 - 8 Rest Pause"
               }
             ]
           }, {
@@ -186,11 +259,11 @@
             weightRef: "64-3",
             reps: [
               {
-                name: "9 - 11"
+                name: "6 - 8"
               }, {
-                name: "9 - 11"
+                name: "6 - 8"
               }, {
-                name: "9 - 11 Rest Pause"
+                name: "6 - 8 Rest Pause"
               }
             ]
           }, {
@@ -199,11 +272,11 @@
             weightRef: "64-4",
             reps: [
               {
-                name: "9 - 11"
+                name: "6 - 8"
               }, {
-                name: "9 - 11"
+                name: "6 - 8"
               }, {
-                name: "9 - 11 Rest Pause"
+                name: "6 - 8 Rest Pause"
               }
             ]
           }, {
@@ -212,13 +285,13 @@
             weightRef: "64-5",
             reps: [
               {
-                name: "9 - 11"
+                name: "6 - 8"
               }, {
-                name: "9 - 11"
+                name: "6 - 8"
               }, {
-                name: "9 - 11"
+                name: "6 - 8"
               }, {
-                name: "9 - 11 Rest Pause"
+                name: "6 - 8 Rest Pause"
               }
             ]
           }, {
@@ -227,11 +300,11 @@
             weightRef: "64-6",
             reps: [
               {
-                name: "9 - 11"
+                name: "6 - 8"
               }, {
-                name: "9 - 11"
+                name: "6 - 8"
               }, {
-                name: "9 - 11"
+                name: "6 - 8"
               }
             ]
           }, {
@@ -240,11 +313,11 @@
             weightRef: "64-7",
             reps: [
               {
-                name: "9 - 11"
+                name: "6 - 8"
               }, {
-                name: "9 - 11"
+                name: "6 - 8"
               }, {
-                name: "9 - 11"
+                name: "6 - 8"
               }
             ]
           }, {
@@ -253,13 +326,13 @@
             weightRef: "64-8",
             reps: [
               {
-                name: "9 - 11"
+                name: "6 - 8"
               }, {
-                name: "9 - 11"
+                name: "6 - 8"
               }, {
-                name: "9 - 11"
+                name: "6 - 8"
               }, {
-                name: "9 - 11 Drop set"
+                name: "6 - 8 Drop set"
               }
             ]
           }, {
@@ -268,13 +341,330 @@
             weightRef: "64-9",
             reps: [
               {
-                name: "9 - 11"
+                name: "6 - 8"
               }, {
-                name: "9 - 11"
+                name: "6 - 8"
               }, {
-                name: "9 - 11"
+                name: "6 - 8"
               }, {
-                name: "9 - 11 Drop set"
+                name: "6 - 8 Drop set"
+              }
+            ]
+          }
+        ]
+      }, {
+        name: "Day 72 -  Back, Biceps & Abs",
+        exercises: [
+          {
+            exercise: 15,
+            id: "72-1",
+            weightRef: "65-1",
+            reps: [
+              {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8 Rest Pause"
+              }
+            ]
+          }, {
+            exercise: 16,
+            id: "72-2",
+            weightRef: "65-2",
+            reps: [
+              {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8 Rest Pause"
+              }
+            ]
+          }, {
+            exercise: 17,
+            id: "72-3",
+            weightRef: "65-3",
+            reps: [
+              {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8 Rest Pause"
+              }
+            ]
+          }, {
+            exercise: 18,
+            id: "72-4",
+            weightRef: "65-4",
+            reps: [
+              {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8 Rest Pause"
+              }
+            ]
+          }, {
+            exercise: 19,
+            id: "72-5",
+            weightRef: "65-5",
+            reps: [
+              {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8 Rest Pause"
+              }
+            ]
+          }, {
+            exercise: 20,
+            id: "72-6",
+            weightRef: "65-6",
+            reps: [
+              {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8 Rest Pause"
+              }
+            ]
+          }, {
+            exercise: 21,
+            id: "72-7",
+            weightRef: "65-7",
+            reps: [
+              {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8 Rest Pause"
+              }
+            ]
+          }, {
+            exercise: 22,
+            id: "72-8",
+            weightRef: "65-8",
+            reps: [
+              {
+                name: "10 - 14"
+              }, {
+                name: "10 - 14"
+              }, {
+                name: "10 - 14 Rest Pause"
+              }
+            ]
+          }, {
+            exercise: 23,
+            id: "72-9",
+            weightRef: "65-9",
+            reps: [
+              {
+                name: "10 - 14"
+              }, {
+                name: "10 - 14"
+              }, {
+                name: "10 - 14 Rest Pause"
+              }
+            ]
+          }, {
+            exercise: 24,
+            id: "72-10",
+            weightRef: "65-10",
+            reps: [
+              {
+                name: "10 - 14"
+              }, {
+                name: "10 - 14"
+              }, {
+                name: "10 - 14 Rest Pause"
+              }
+            ]
+          }
+        ]
+      }, {
+        name: "Day 74 -  Shoulders, Traps & Calves",
+        exercises: [
+          {
+            exercise: 25,
+            id: "74-1",
+            weightRef: "67-1",
+            reps: [
+              {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8 Rest Pause"
+              }
+            ]
+          }, {
+            exercise: 26,
+            id: "74-2",
+            weightRef: "67-2",
+            reps: [
+              {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8 Rest Pause"
+              }
+            ]
+          }, {
+            exercise: 27,
+            id: "74-3",
+            weightRef: "67-3",
+            reps: [
+              {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8 Rest Pause"
+              }
+            ]
+          }, {
+            exercise: 28,
+            id: "74-4",
+            weightRef: "67-4",
+            reps: [
+              {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8 Rest Pause"
+              }
+            ]
+          }, {
+            exercise: 29,
+            id: "74-5",
+            weightRef: "67-5",
+            reps: [
+              {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8 Rest Pause"
+              }
+            ]
+          }, {
+            exercise: 14,
+            id: "74-6",
+            weightRef: "67-6",
+            reps: [
+              {
+                name: "10 - 14"
+              }, {
+                name: "10 - 14"
+              }, {
+                name: "10 - 14"
+              }, {
+                name: "10 - 14 Rest Pause"
+              }
+            ]
+          }, {
+            exercise: 13,
+            id: "74-7",
+            weightRef: "67-7",
+            reps: [
+              {
+                name: "10 - 14"
+              }, {
+                name: "10 - 14"
+              }, {
+                name: "10 - 14"
+              }, {
+                name: "10 - 14 Rest Pause"
+              }
+            ]
+          }
+        ]
+      }, {
+        name: "Day 75 - Legs",
+        exercises: [
+          {
+            exercise: 1,
+            id: "75-1",
+            weightRef: "68-1",
+            reps: [
+              {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8 Rest Pause"
+              }
+            ]
+          }, {
+            exercise: 4,
+            id: "75-2",
+            weightRef: "68-2",
+            reps: [
+              {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8 Rest Pause"
+              }
+            ]
+          }, {
+            exercise: 5,
+            id: "75-3",
+            weightRef: "68-3",
+            reps: [
+              {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8 Rest Pause"
+              }
+            ]
+          }, {
+            exercise: 2,
+            id: "75-4",
+            weightRef: "68-4",
+            reps: [
+              {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8 Rest Pause"
+              }
+            ]
+          }, {
+            exercise: 3,
+            id: "75-5",
+            weightRef: "68-5",
+            reps: [
+              {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8"
+              }, {
+                name: "6 - 8 Rest Pause"
               }
             ]
           }
@@ -361,10 +751,25 @@
       return $scope.currentRep = 0;
     };
     $scope.getPreviousResult = function(repRef) {
-      if (repRef != null) {
-        return "90KG";
+      var max, min, recording, total, _i, _len, _ref;
+      if ($scope.db[repRef] != null) {
+        total = 0;
+        min = $scope.db[repRef][0];
+        max = 0;
+        _ref = $scope.db[repRef];
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          recording = _ref[_i];
+          if (recording > max) {
+            max = recording;
+          }
+          if (recording < min) {
+            min = recording;
+          }
+          total += recording;
+        }
+        return "" + (Math.ceil(total / $scope.db[repRef].length, 0)) + "KG (min was " + min + ", max was " + max + ")";
       } else {
-        return "70KG";
+        return "No recording";
       }
     };
     $scope.getResult = function(ref, index) {
