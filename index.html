@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="workout">
+  <head>
+    <meta charset="utf-8">
+    <title>Workout App</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel='stylesheet' type='text/css' href="css/screen.css" media="all" />
+    <link rel='stylesheet' type='text/css' href="css/ratchet.css" media="all"/>
+    <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+        <script src="js/application.js"></script>
+
+
+
+<script src="http://localhost:35729/livereload.js?snipver=1"/></script>
+
+  </head>
+  
+  <body ng-controller="AppCtrl">
+
+    <header class="bar-title">
+      <a class="button-prev" ng-show="state=='selectWorkout'" ng-tap="backToSelectDay()">
+        Days
+      </a>
+      <a class="button-prev" ng-show="state=='workout'" ng-tap="backToSelectWorkout()">
+        Workouts
+      </a>
+      <h1 class="title">{{title}}</h1>
+      <a class="button" ng-show="state=='workout'" ng-tap="resetWorkout()">
+          reset
+        </a>
+    </header>
+
+    <div class="content day-list" ng-show="state=='selectDay'">
+      <ul class="list">
+          <li ng-repeat="day in days" ng-tap="selectDay(day)">
+              <a>{{day.name}}</a>
+              <span class="chevron"></span>
+          </li>
+      </ul>
+    </div>
+
+    <div class="content workout-list" ng-show="state=='selectWorkout'">
+      <ul class="list">
+          <li ng-repeat="workout in workouts" ng-tap="selectWorkout(workout)">
+              {{exercises[workout.exercise].name}}
+              <span class="chevron"></span>
+              <span class="count" ng-show="completedWorkout(workout)">completed</span>
+          </li>
+      </ul>
+    </div>
+
+    <div class="content workout" ng-show="state=='workout'">
+
+      <div class="workout-details">
+        <div class="details">
+          <p>70KG Last week</p>
+        </div>
+        <img ng-src="{{exercises[selectedWorkout.exercise].beforeImg}}" class="before"/>
+        <img ng-src="{{exercises[selectedWorkout.exercise].afterImg}}" class="after"/>
+      </div>
+
+      <ul class="list">
+        <li ng-repeat="rep in selectedWorkout.reps">{{rep.name}} <a class="button-positive">Done</a></li>
+      </ul>
+    </div>
+
+    <div class="content workout" ng-show="state=='workout'">
+
+      <div class="workout-details">
+        <div class="details">
+          <p>{{getPreviousResult()}} Last week</p>
+        </div>
+        <img ng-src="{{exercises[selectedWorkout.exercise].beforeImg}}" class="before"/>
+        <img ng-src="{{exercises[selectedWorkout.exercise].afterImg}}" class="after"/>
+      </div>
+
+      <ul class="list">
+        <li ng-repeat="(index,rep) in selectedWorkout.reps">
+          {{rep.name}} reps
+          <span class="count" ng-show="getResult(selectedWorkout.id, index) != false">{{getResult(selectedWorkout.id, index)}}</span>
+          <a class="button-positive" ng-tap="recordWeight()" ng-show="index==currentRep && !getResult(selectedWorkout.id, index)">done</a>
+        </li>
+      </ul>
+
+      <div class="content-padded"><a class="button-positive button-block" ng-show="finishedWorkout()" ng-tap="nextWorkout()">Next Workout »</a></div>
+    </div>
+
+    <div id="what-weight" class="modal" ng-show="state=='typeWeight'">
+      
+      <header class="bar-title">
+        <h1 class="title">Record weight</h1>
+        <a class="button" ng-tap="cancelRecordWeight()">
+          cancel
+        </a>
+      </header>
+
+      <div class="content content-padded">
+        
+        <div class="center">
+          <h2>What weight did you attain?</h1>
+          <form>
+            <input type="number" placeholder="Weight in KG" ng-model="weight">
+            <a class="button button-block button-main" ng-tap="submitWeight()">Save</a>
+          </form>
+        </div>
+
+      </div>
+    </div>    
+
+  </body>
+
+
+  
+</html>

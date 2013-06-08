@@ -1,0 +1,82 @@
+@import "reset.less";
+@import "preboot.less";
+
+* {
+  font-family: "Helvetica Neue";
+  box-sizing:border-box;
+  font-weight:400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  font-smoothing: antialiased;
+}
+
+@baseline:12px;
+@linkColour:#2382E1;
+@errorColour:#cc0000;
+
+@primary-colour:#31353e;
+
+// overrides
+
+@font-size-base: 16px;
+
+header h1.title {
+  font-size:14px!important;
+}
+
+.workout-details {
+  .clearfix();
+
+  .details {
+    background:lighten(#eee,5);
+    border-bottom:1px solid #ddd;
+    p {
+      line-height:48px;
+      text-align:center;
+      font-weight:700;
+      font-size:16px;
+      color:#444;
+    }
+  }
+
+  img {
+    width:50%;
+    float:left;
+
+    &.before {
+      padding:12px;
+      padding-right:6px;
+      
+    }
+    &.after {
+      padding:12px;
+      padding-left:6px;
+    }
+  }
+}
+
+#what-weight {
+  .center {
+    position:absolute;
+    left:10px;
+    right:10px;
+    top:30%;
+    text-align:center;
+    h2 {
+      line-height:36px;
+      font-size:18px;
+      text-align:center;
+      margin-bottom:18px;
+    }
+    input {
+      margin-bottom:24px;
+      text-align:center;
+      //width:50%;
+    }
+
+  }
+}
+
+
+
+

@@ -1,0 +1,198 @@
+/* reset styles 
+--------------------------------------------- */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+:focus {
+  outline: none;
+}
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*!
+ * Preboot v2
+ *
+ * Open sourced under MIT license by @mdo.
+ * Some variables and mixins from Bootstrap (Apache 2 license).
+ */
+* {
+  font-family: "Helvetica Neue";
+  box-sizing: border-box;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  font-smoothing: antialiased;
+}
+header h1.title {
+  font-size: 14px!important;
+}
+.workout-details:before,
+.workout-details:after {
+  content: " ";
+  display: table;
+}
+.workout-details:after {
+  clear: both;
+}
+.workout-details .details {
+  background: #fbfbfb;
+  border-bottom: 1px solid #ddd;
+}
+.workout-details .details p {
+  line-height: 48px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  color: #444;
+}
+.workout-details img {
+  width: 50%;
+  float: left;
+}
+.workout-details img.before {
+  padding: 12px;
+  padding-right: 6px;
+}
+.workout-details img.after {
+  padding: 12px;
+  padding-left: 6px;
+}
+#what-weight .center {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 30%;
+  text-align: center;
+}
+#what-weight .center h2 {
+  line-height: 36px;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 18px;
+}
+#what-weight .center input {
+  margin-bottom: 24px;
+  text-align: center;
+}
