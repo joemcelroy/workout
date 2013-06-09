@@ -13,6 +13,7 @@ angular.module('workout', [])
 
 .controller "AppCtrl", ($scope) ->
   $scope.state = "selectDay"
+  $scope.showWeightModal = false
   $scope.title = "12 Weeks to Size"
   $scope.exercises = window.data.exercises
 
@@ -73,7 +74,7 @@ angular.module('workout', [])
           min = recording
         total+= recording
 
-      return "#{Math.ceil(total / $scope.db[repRef].length,0)}KG (min was #{min}, max was #{max})"
+      return "#{Math.ceil(total / $scope.db[repRef].length,0)}KG (#{min} - #{max})"
     else 
       "No recording"
 
@@ -85,7 +86,7 @@ angular.module('workout', [])
 
   $scope.resetWorkout = ->
     $scope.currentRep = 0
-    $scope.db[$scope.selectedWorkout.id] = []
+    delete $scope.db[$scope.selectedWorkout.id]
     saveData()
 
   $scope.completedWorkout = (workout) ->
@@ -95,19 +96,18 @@ angular.module('workout', [])
     $scope.selectedWorkout?.reps.length == $scope.currentRep
 
   $scope.nextWorkout = ->
-    $scope.weight = ""
+    $scope.inputWeight = ""
     $scope.backToSelectWorkout()
 
   $scope.cancelRecordWeight = ->
-    $scope.state = "workout"
+    $scope.showWeightModal = false
 
   $scope.recordWeight = ->
-    $scope.state = "typeWeight"
-    $("input").focus()
+    $scope.showWeightModal = true
 
   $scope.submitWeight = ->
-    if $scope.weight > 0
-      $scope.state = "workout"
-      saveWorkoutRep $scope.selectedWorkout.id, $scope.currentRep, $scope.weight
+    if $scope.inputWeight > 0
+      $scope.showWeightModal = false
+      saveWorkoutRep $scope.selectedWorkout.id, $scope.currentRep, $scope.inputWeight
       $scope.currentRep++
 

@@ -700,6 +700,7 @@
   }).controller("AppCtrl", function($scope) {
     var readData, saveData, saveWorkoutRep;
     $scope.state = "selectDay";
+    $scope.showWeightModal = false;
     $scope.title = "12 Weeks to Size";
     $scope.exercises = window.data.exercises;
     $scope.days = window.data.workouts;
@@ -767,7 +768,7 @@
           }
           total += recording;
         }
-        return "" + (Math.ceil(total / $scope.db[repRef].length, 0)) + "KG (min was " + min + ", max was " + max + ")";
+        return "" + (Math.ceil(total / $scope.db[repRef].length, 0)) + "KG (" + min + " - " + max + ")";
       } else {
         return "No recording";
       }
@@ -782,7 +783,7 @@
     };
     $scope.resetWorkout = function() {
       $scope.currentRep = 0;
-      $scope.db[$scope.selectedWorkout.id] = [];
+      delete $scope.db[$scope.selectedWorkout.id];
       return saveData();
     };
     $scope.completedWorkout = function(workout) {
@@ -794,20 +795,19 @@
       return ((_ref = $scope.selectedWorkout) != null ? _ref.reps.length : void 0) === $scope.currentRep;
     };
     $scope.nextWorkout = function() {
-      $scope.weight = "";
+      $scope.inputWeight = "";
       return $scope.backToSelectWorkout();
     };
     $scope.cancelRecordWeight = function() {
-      return $scope.state = "workout";
+      return $scope.showWeightModal = false;
     };
     $scope.recordWeight = function() {
-      $scope.state = "typeWeight";
-      return $("input").focus();
+      return $scope.showWeightModal = true;
     };
     return $scope.submitWeight = function() {
-      if ($scope.weight > 0) {
-        $scope.state = "workout";
-        saveWorkoutRep($scope.selectedWorkout.id, $scope.currentRep, $scope.weight);
+      if ($scope.inputWeight > 0) {
+        $scope.showWeightModal = false;
+        saveWorkoutRep($scope.selectedWorkout.id, $scope.currentRep, $scope.inputWeight);
         return $scope.currentRep++;
       }
     };
