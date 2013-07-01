@@ -90,10 +90,10 @@ angular.module('workout', [])
     saveData()
 
   $scope.completedWorkout = (workout) ->
-    workout.reps.length == $scope.db[workout.id]?.length
+    workout.reps.length is $scope.db[workout.id]?.length
 
   $scope.finishedWorkout = ->
-    $scope.selectedWorkout?.reps.length == $scope.currentRep
+    $scope.selectedWorkout?.reps.length is $scope.currentRep
 
   $scope.nextWorkout = ->
     $scope.inputWeight = ""
