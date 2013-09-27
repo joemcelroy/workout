@@ -1,113 +1,176 @@
 angular.module('workout', [])
 
-.directive 'ngTap', ->
+.factory "NavService", (WorkoutService) ->
 
-  (scope, element, attrs) ->
-    tapping = false
-    element.bind 'touchstart', (e) -> tapping = true
-    element.bind 'touchmove', (e) -> tapping = false
-    element.bind 'touchend', (e) -> scope.$apply(attrs['ngTap'], element) if tapping
-    element.bind 'click', (e) ->
-      if window.navigator.userAgent.match(/(iPad|iPhone|iPod)/g) is null
-        scope.$apply(attrs['ngTap'], element)
+  return {
 
-.controller "AppCtrl", ($scope) ->
-  $scope.state = "selectDay"
-  $scope.showWeightModal = false
-  $scope.title = "12 Weeks to Size"
-  $scope.exercises = window.data.exercises
+    state: "selectDay"
+    slideMotion: "slide-left"
 
-  $scope.days = window.data.workouts
+    isOn: (path) ->
+      @state is path
 
-  saveWorkoutRep = (ref, index, weight) ->
-    if !$scope.db[ref]?
-      $scope.db[ref] = []
+    backTo: (path) ->
+      @slideMotion = "slide-left"
+      @state = path
 
-    $scope.db[ref][index] = weight
-    saveData()    
+    moveTo: (path) ->
+      @slideMotion = "slide-right"
+      @state = path
 
-  readData = ->
-    try 
-      $scope.db = JSON.parse localStorage["workoutApp"]
-    catch error
-      $scope.db = {}
-      console.log error
+    selectDay: (day) ->
+      WorkoutService.selectDay(day)
+      @moveTo("selectWorkout")
 
-  saveData = ->
-    try
-      localStorage["workoutApp"] = JSON.stringify $scope.db
-    catch error
-      console.log error 
+    backToDayList: ->
+      WorkoutService.deselectDay()
+      @backTo("selectDay")
 
-  readData()
+    backToWorkoutList: ->
+      WorkoutService.deselectWorkout()
+      @backTo("selectWorkout")
+
+    selectWorkout:(workout) ->
+      WorkoutService.selectWorkout(workout)
+      @moveTo("workout")
 
 
-  $scope.selectDay = (day) ->
-    $scope.selectedDay = day
-    $scope.state = "selectWorkout"
-    $scope.workouts = day.exercises
-    $scope.title = day.name
+  }
 
-  $scope.backToSelectDay = ->
-    $scope.title = "12 Weeks to Size"
-    $scope.state = "selectDay"
 
-  $scope.backToSelectWorkout = ->
-    $scope.title = $scope.selectedDay.name
-    $scope.state = "selectWorkout"
+.factory "PersistanceService", ->
 
-  $scope.selectWorkout = (workout) ->
-    $scope.selectedWorkout = workout
-    $scope.state = "workout"
-    $scope.title = $scope.exercises[workout.exercise].name
-    $scope.currentRep = 0
+  new class PersistanceService
 
-  $scope.getPreviousResult = (repRef) ->
-    if $scope.db[repRef]?
-      total = 0
-      min = $scope.db[repRef][0]
-      max = 0
-      for recording in $scope.db[repRef]
-        if recording > max
-          max = recording
-        if recording < min
-          min = recording
-        total+= recording
+    constructor: ->
+      @getSnapshot()
 
-      return "#{Math.ceil(total / $scope.db[repRef].length,0)}KG (#{min} - #{max})"
-    else 
-      "No recording"
+    getSnapshot: ->
+      try 
+        @snapshot = JSON.parse localStorage["workoutApp"]
+      catch error
+        @snapshot = {}
+        console.log error
 
-  $scope.getResult = (ref,index) ->
-    if $scope.db[ref]?[index]?
-      $scope.db[ref][index]
-    else
-      false
+    persist: ->
+      try
+        localStorage["workoutApp"] = JSON.stringify @snapshot
+      catch error
+        console.log error 
 
-  $scope.resetWorkout = ->
-    $scope.currentRep = 0
-    delete $scope.db[$scope.selectedWorkout.id]
-    saveData()
+    saveWorkoutRep:(workoutId, rep, weight) ->
+      @snapshot[workoutId] ?= []
+      @snapshot[workoutId][rep] = weight
+      @persist()
 
-  $scope.completedWorkout = (workout) ->
-    workout.reps.length is $scope.db[workout.id]?.length
+    getWorkoutExercise: (workoutId) ->
+      @snapshot[workoutId]
 
-  $scope.finishedWorkout = ->
-    $scope.selectedWorkout?.reps.length is $scope.currentRep
+    getWorkoutRep: (workoutId,rep) ->
+      @getWorkoutExercise(workoutId)?[rep] or false
 
-  $scope.nextWorkout = ->
-    $scope.inputWeight = ""
-    $scope.backToSelectWorkout()
 
-  $scope.cancelRecordWeight = ->
-    $scope.showWeightModal = false
+.factory "WorkoutService", (PersistanceService, RunWorkoutService) ->
 
-  $scope.recordWeight = ->
-    $scope.showWeightModal = true
+  new class WorkoutService
 
-  $scope.submitWeight = ->
-    if $scope.inputWeight > 0
-      $scope.showWeightModal = false
-      saveWorkoutRep $scope.selectedWorkout.id, $scope.currentRep, $scope.inputWeight
-      $scope.currentRep++
+    constructor: ->
+      @days = window.data.workouts
+      @exercises = window.data.exercises
+
+      @curentDay = null
+
+      @title = "12 Weeks to Size"
+
+    selectDay:(day) ->
+      @currentDay = day
+      @title = day.name
+    
+    deselectDay: ->
+      @title = "12 Weeks to Size"
+      @currentDay = null
+
+    selectWorkout: (workout) ->
+      exercise = @getExercise(workout.exercise)
+      @title = exercise.name
+      RunWorkoutService.setWorkout(workout, exercise)
+
+    deselectWorkout: ->
+      @title = @currentDay.name
+
+    getExercise: (exerciseId) ->
+      _.find @exercises, (e) -> e.id is exerciseId
+
+
+.factory "RunWorkoutService", (PersistanceService) ->
+
+  new class RunWorkoutService
+
+    constructor: ->
+      @currentRep = 0
+      @workout = null
+      @inputWeight = ""
+
+    setWorkout: (@workout, @exercise) ->
+      @currentRep = @recordedWorkouts().length
+      @inputWeight = ""
+
+    getResult: (rep) ->
+      PersistanceService.getWorkoutRep(@workout.id,rep)
+
+    getPreviousResult: ->
+      results = PersistanceService.getWorkoutExercise(@exercise.weightRef)
+
+      if results?
+
+        total = _.reduce results, (memo, num) -> memo + sum 
+        min = _.min(results)
+        max = _.max(results)
+
+        "#{Math.ceil(total / results.length,0)}KG (#{min} - #{max})"
+      else 
+        "No recording"
+
+    recordedWorkouts: ->
+      PersistanceService.getWorkoutExercise(@workout.id) or []
+
+    isCompleted: ->
+      results = @recordedWorkouts()
+      results?.length is @workout.reps.length
+
+    saveRep: (weight) ->
+      PersistanceService.saveWorkoutRep(@workout.id, @currentRep, weight)
+      @currentRep++
+
+
+
+.factory "WeightModal", (RunWorkoutService) ->
+
+  new class WeightModal
+
+    constructor: ->
+      @reset()
+
+    reset: ->
+      @visible = false
+      @weightModel = null
+
+    show: ()->
+      @visible = true
+
+    hide:->
+      @visible = false
+      @reset()
+
+    saveWeight: ->
+      if @weightModel > 0
+        RunWorkoutService.saveRep(@weightModel)
+        @hide()
+
+
+.controller "AppCtrl", ($scope, WeightModal, RunWorkoutService, WorkoutService, NavService) ->
+  $scope.WeightModal = WeightModal
+  $scope.RunWorkoutService = RunWorkoutService
+  $scope.WorkoutService = WorkoutService
+  $scope.NavService = NavService
 

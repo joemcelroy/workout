@@ -57,7 +57,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('build', ['less','coffee']);
-  grunt.registerTask('watchAll', ['build', 'livereload-start','regarde'])
+  grunt.registerTask('dev', ['build', 'livereload-start','regarde'])
   grunt.registerTask('server', ['build' ,'connect', 'livereload-start', 'regarde'])
 
 };

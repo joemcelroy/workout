@@ -6,37 +6,31 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
     <link rel='stylesheet' type='text/css' href="css/ratchet.css" media="all"/>
-
     <link rel='stylesheet' type='text/css' href="css/screen.css" media="all" />
+
     <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
-        <script src="js/application.js"></script>
-
-
-
-<script src="http://localhost:35729/livereload.js?snipver=1"/></script>
-
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
+    <script src="http://underscorejs.org/underscore-min.js"></script>
+    <script src="js/application.js"></script>
   </head>
   
-  <body ng-controller="AppCtrl" ng-switch on="state" ng-animate="'animate'">
+  <body ng-controller="AppCtrl" ng-switch on="NavService.state" ng-animate="animate">
 
     <header class="bar-title">
-      <a class="button-prev" ng-show="state=='selectWorkout'" ng-tap="backToSelectDay()">
+      <a class="button-prev" ng-show="NavService.isOn('selectWorkout')" ng-click="NavService.backTo('selectDay')">
         Days
       </a>
-      <a class="button-prev" ng-show="state=='workout'" ng-tap="backToSelectWorkout()">
+      <a class="button-prev" ng-show="NavService.isOn('workout')" ng-click="NavService.backTo('selectWorkout')">
         Workouts
       </a>
-      <h1 class="title">{{title}}</h1>
-      <a class="button" ng-show="state=='workout'" ng-tap="resetWorkout()">
-          reset
-        </a>
+      <h1 class="title">{{WorkoutService.title}}</h1>
     </header>
 
     <div class="content day-list" ng-switch-when="selectDay" >
       <ul class="list">
-          <li ng-repeat="day in days" ng-tap="selectDay(day)">
+          <li ng-repeat="day in WorkoutService.days" ng-click="NavService.selectDay(day)">
               <a>{{day.name}}</a>
               <span class="chevron"></span>
           </li>
@@ -45,11 +39,11 @@
 
     <div class="content workout-list" ng-switch-when="selectWorkout" >
       <ul class="list">
-          <li ng-repeat="workout in workouts" ng-tap="selectWorkout(workout)">
-              {{exercises[workout.exercise].name}}
+          <li ng-repeat="exercise in WorkoutService.currentDay.exercises" ng-click="NavService.selectWorkout(exercise)">
+              {{WorkoutService.getExercise(exercise.exercise).name}}
               <span class="chevron"></span>
-              <span class="count" ng-show="completedWorkout(workout)">completed</span>
-          </li>
+<!--               <span class="count" ng-show="completedWorkout(workout)">completed</span>
+ -->          </li>
       </ul>
     </div>
 
@@ -57,28 +51,28 @@
 
       <div class="workout-details">
         <div class="details">
-          <p>{{getPreviousResult(selectedWorkout.weightRef)}} last week</p>
+          <p>{{RunWorkoutService.getPreviousResult()}} last week</p>
         </div>
-        <img ng-src="{{exercises[selectedWorkout.exercise].beforeImg}}" class="before"/>
-        <img ng-src="{{exercises[selectedWorkout.exercise].afterImg}}" class="after"/>
+        <img ng-src="{{RunWorkoutService.exercise.beforeImg}}" class="before"/>
+        <img ng-src="{{RunWorkoutService.exercise.afterImg}}" class="after"/>
       </div>
 
       <ul class="list">
-        <li ng-repeat="(index,rep) in selectedWorkout.reps">
+        <li ng-repeat="(index,rep) in RunWorkoutService.workout.reps">
           {{rep.name}} reps
-          <span class="count" ng-show="getResult(selectedWorkout.id, index) != false">{{getResult(selectedWorkout.id, index)}}</span>
-          <a class="button-positive" ng-tap="recordWeight()" ng-show="index==currentRep && !getResult(selectedWorkout.id, index)">✔</a>
+          <span class="count" ng-show="RunWorkoutService.getResult(index) != false">{{RunWorkoutService.getResult(index)}}</span>
+          <a class="button-positive" ng-click="WeightModal.show()" ng-show="index==RunWorkoutService.currentRep && !RunWorkoutService.getResult(index)">✔</a>
         </li>
       </ul>
 
       <div class="content-padded"><a class="button-positive button-block" ng-show="finishedWorkout()" ng-tap="nextWorkout()">Next Workout »</a></div>
     </div>
 
-    <div id="what-weight" class="modal" ng-class="{active:showWeightModal}">
+    <div id="what-weight" class="modal" ng-class="{active:WeightModal.visible}">
       
       <header class="bar-title">
         <h1 class="title">Record weight</h1>
-        <a class="button" ng-tap="cancelRecordWeight()">
+        <a class="button" ng-click="WeightModal.hide()">
           cancel
         </a>
       </header>
@@ -88,8 +82,8 @@
         <div class="center">
           <h2>What weight did you attain?</h1>
           <form>
-            <input type="number" placeholder="Weight in KG" ng-model="inputWeight">
-            <a class="button button-block button-main" ng-tap="submitWeight()">Save</a>
+            <input type="number" placeholder="Weight in KG" ng-model="WeightModal.weightModel">
+            <a class="button button-block button-main" ng-click="WeightModal.saveWeight()">Save</a>
           </form>
         </div>
 

@@ -1,151 +1,180 @@
 window.data = {
-  exercises: {
-    1: {
+  exercises: [
+    {
+      id:1
       name:"Barbell Squat"
       beforeImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/31/Male/m/31_1.jpg"
       afterImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/31/Male/m/31_2.jpg"
     }
-    2: {
+    {
+      id:2
       name:"Romanian Deadlift"
       beforeImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/171/Male/m/171_1.jpg"
       afterImg: "http://www.bodybuilding.com/exercises/exerciseImages/sequences/171/Male/m/171_2.jpg"
     }
-    3: {
+    {
+      id:3
       name:"Lying Leg Curls"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/52/Male/m/52_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/52/Male/m/52_2.jpg"
     }
-    4: {
+    {
+      id:4
       name:"Leg Press"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/57/Male/m/57_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/57/Male/m/57_2.jpg"
     }
-    5: {
+    {
+      id:5
       name:"Leg Extensions"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/53/Male/m/53_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/53/Male/m/53_2.jpg"
     }
-    6: {
+    {
+      id:6
       name:"Barbell Bench Press - Medium Grip"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/360/Male/m/360_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/360/Male/m/360_2.jpg"
     }
-    7: {
+    {
+      id:7
       name:"Incline Dumbbell Press (Reverse Grip)"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/380/Male/m/380_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/380/Male/m/380_2.jpg"
     }
-    8: {
+    {
+      id:8
       name:"Incline Dumbbell Flyes"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/38/Male/m/38_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/38/Male/m/38_2.jpg"
     }
-    9: {
+    {
+      id:9
       name:"Cable Crossover"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/132/Male/m/132_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/132/Male/m/132_2.jpg"
     } 
-    10: {
+    {
+      id:10
       name:"Tricep Pushdown"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/343/Male/m/343_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/343/Male/m/343_2.jpg"
     } 
-    11: {
+    {
+      id:11
       name:"Standing Low-Pulley One-Arm Triceps Extension"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/149/Male/m/149_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/149/Male/m/149_2.jpg"
     } 
-    12: {
+    {
+      id:12
       name:"Close-Grip Barbell Bench Press"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/23/Male/m/23_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/23/Male/m/23_2.jpg"
     }
-    13: {
+    {
+      id:13
       name:"Standing Calf Raises"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/48/Male/m/48_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/48/Male/m/48_2.jpg"
     }
-    14: {
+    {
+      id:14
       name:"Seated Calf Raise"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/152/Male/m/152_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/152/Male/m/152_2.jpg"
     }
-    15: {
+    {
+      id:15
       name:"Dumbbell Bent Over Row"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/16/Male/m/16_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/16/Male/m/16_2.jpg"     
     }
-    16: {
+    {
+      id:16
       name:"Wide-Grip Lat Pulldown"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/10/Male/m/10_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/10/Male/m/10_2.jpg"     
     }
-    17: {
+    {
+      id:17
       name:"Straight-Arm Pulldown"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/11/Male/m/11_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/11/Male/m/11_2.jpg"     
     }
-    18: {
+    {
+      id:18
       name:"Seated Cable Rows"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/45/Male/m/45_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/45/Male/m/45_2.jpg"     
     }
-    19: {
+    {
+      id:19
       name:"Barbell Curl"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/169/Male/m/169_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/169/Male/m/169_2.jpg"     
     }
-    20: {
+    {
+      id:20
       name:"Incline Dumbbell Curl"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/114/Male/m/114_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/114/Male/m/114_2.jpg"     
     } 
-    21: {
+    {
+      id:21
       name:"Concentration Curls"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/136/Male/m/136_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/136/Male/m/136_2.jpg"     
     }
-    22: {
+    {
+      id:22
       name:"Bent-Knee Hip Raise"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/118/Male/m/118_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/118/Male/m/118_2.jpg"
     }
-    23: {
+    {
+      id:23
       name:"Cable Crunch"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/163/Male/m/163_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/163/Male/m/163_2.jpg"
     }  
-    24: {
+    {
+      id:24
       name:"Cable Oblique Crunch"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/163/Male/m/163_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/163/Male/m/163_2.jpg"
     }
-    25: {
+    {
+      id:25
       name:"Dumbbell Shoulder Press"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/328/Male/m/328_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/328/Male/m/328_2.jpg"
     }
-    26: {
+    {
+      id:26
       name:"Side Lateral Raise"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/373/Male/m/373_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/373/Male/m/373_2.jpg"
-    } 
-    27: {
+    }
+    {
+      id:27
       name:"Standing Dumbbell Upright Row"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/368/Male/m/368_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/368/Male/m/368_2.jpg"
     }
-    28: {
+    {
+      id:28
       name:"Smith Machine Shrug"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/134/Male/m/134_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/134/Male/m/134_2.jpg"
     }
-    29: {
+    {
+      id:29
       name:"Smith Machine Shrug"
       beforeImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/134/Male/m/134_1.jpg"
       afterImg:"http://www.bodybuilding.com/exercises/exerciseImages/sequences/134/Male/m/134_2.jpg"
     }        
-  }
+  ]
   workouts: [
     {
       name:"Day 68 - Legs"
