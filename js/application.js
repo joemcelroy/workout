@@ -747,7 +747,7 @@
       };
 
       PersistanceService.prototype.getWorkoutExercise = function(workoutId) {
-        return this.snapshot[workoutId];
+        return this.snapshot[workoutId] || [];
       };
 
       PersistanceService.prototype.getWorkoutRep = function(workoutId, rep) {
@@ -793,6 +793,11 @@
         return _.find(this.exercises, function(e) {
           return e.id === exerciseId;
         });
+      };
+
+      WorkoutService.prototype.completedWorkout = function(workout) {
+        console.log(workout);
+        return PersistanceService.getWorkoutExercise(workout.id).length === workout.reps.length;
       };
 
       return WorkoutService;

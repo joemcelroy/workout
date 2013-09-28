@@ -64,7 +64,7 @@ angular.module('workout', [])
       @persist()
 
     getWorkoutExercise: (workoutId) ->
-      @snapshot[workoutId]
+      @snapshot[workoutId] or []
 
     getWorkoutRep: (workoutId,rep) ->
       @getWorkoutExercise(workoutId)?[rep] or false
@@ -100,6 +100,10 @@ angular.module('workout', [])
 
     getExercise: (exerciseId) ->
       _.find @exercises, (e) -> e.id is exerciseId
+
+    completedWorkout: (workout) ->
+      console.log workout
+      PersistanceService.getWorkoutExercise(workout.id).length is workout.reps.length
 
 
 .factory "RunWorkoutService", (PersistanceService) ->

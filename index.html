@@ -42,8 +42,8 @@
           <li ng-repeat="exercise in WorkoutService.currentDay.exercises" ng-click="NavService.selectWorkout(exercise)">
               {{WorkoutService.getExercise(exercise.exercise).name}}
               <span class="chevron"></span>
-<!--               <span class="count" ng-show="completedWorkout(workout)">completed</span>
- -->          </li>
+              <span class="count" ng-show="WorkoutService.completedWorkout(exercise)">completed</span>
+          </li>
       </ul>
     </div>
 
@@ -65,7 +65,7 @@
         </li>
       </ul>
 
-      <div class="content-padded"><a class="button-positive button-block" ng-show="finishedWorkout()" ng-tap="nextWorkout()">Next Workout »</a></div>
+      <div class="content-padded"><a class="button-positive button-block" ng-show="RunWorkoutService.isCompleted()" ng-click="NavService.backTo('selectWorkout')">Next Workout »</a></div>
     </div>
 
     <div id="what-weight" class="modal" ng-class="{active:WeightModal.visible}">
