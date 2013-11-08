@@ -1,4 +1,4 @@
-window.data = {
+data = {
   exercises: [
     {
       id:1
@@ -176,319 +176,280 @@ window.data = {
     }        
   ]
   workouts: [
-    {
-      name:"Day 68 - Legs"
-      exercises: [
-        {
-          exercise:1
-          id:"68-1"
-          weightRef:"61-1"
-          reps: [
-            { name:"9 - 11" }, { name:"9 - 11" }, { name:"9 - 11" }, { name:"9 - 11 Rest Pause" }
-          ]
-        }
-        {
-          exercise:4
-          id:"68-2"
-          weightRef:"61-2"
-          reps: [
-            { name:"9 - 11" }, { name:"9 - 11" }, { name:"9 - 11 Rest Pause" }
-          ]
-        }
-        {
-          exercise:5
-          id:"68-3"
-          weightRef:"61-3"
-          reps: [
-            { name:"9 - 11" }, { name:"9 - 11" }, { name:"9 - 11 Rest Pause" }
-          ]
-        }
-        {
-          exercise:2
-          id:"68-4"
-          weightRef:"61-4"
-          reps: [
-            { name:"9 - 11" }, { name:"9 - 11" }, { name:"9 - 11" }, { name:"9 - 11 Rest Pause" }
-          ]
-        }
-        {
-          exercise:3,
-          id:"68-5"
-          weightRef:"61-4"
-          reps: [
-            { name:"9 - 11" }, { name:"9 - 11" }, { name:"9 - 11 Rest Pause" }
-          ]
-        }
-      ]
-    }
-    {
-      name:"Day 71 - Chest, Triceps & Calfs"
-      exercises: [
-        {
-          exercise:6
-          id:"71-1"
-          weightRef:"64-1"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Rest Pause" }
-          ]
-        }
-        {
-          exercise:7
-          id:"71-2"
-          weightRef:"64-2"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Rest Pause" }
-          ]
-        }
-        {
-          exercise:8
-          id:"71-3"
-          weightRef:"64-3"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Rest Pause" }
-          ]
-        }
-        {
-          exercise:9
-          id:"71-4"
-          weightRef:"64-4"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Rest Pause" }
-          ]
-        } 
-        {
-          exercise:10
-          id:"71-5"
-          weightRef:"64-5"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Rest Pause" }
-          ]
-        }
-        {
-          exercise:11
-          id:"71-6"
-          weightRef:"64-6"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8" }
-          ]
-        }
-        {
-          exercise:12
-          id:"71-7"
-          weightRef:"64-7"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8" }
-          ]
-        }
-        {
-          exercise:13
-          id:"71-8"
-          weightRef:"64-8"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Drop set" }
-          ]
-        }
-        {
-          exercise:14
-          id:"71-9"
-          weightRef:"64-9"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Drop set" }
-          ]
-        }      
-      ]
-    }
-    {
-      name:"Day 72 -  Back, Biceps & Abs"
-      exercises: [
-        {
-          exercise:15
-          id:"72-1"
-          weightRef:"65-1"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Rest Pause" }
-          ]
-        }
-        {
-          exercise:16
-          id:"72-2"
-          weightRef:"65-2"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Rest Pause" }
-          ]
-        }
-        {
-          exercise:17
-          id:"72-3"
-          weightRef:"65-3"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Rest Pause" }
-          ]
-        }
-        {
-          exercise:18
-          id:"72-4"
-          weightRef:"65-4"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Rest Pause" }
-          ]
-        }
-        {
-          exercise:19
-          id:"72-5"
-          weightRef:"65-5"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Rest Pause" }
-          ]
-        }
-        {
-          exercise:20
-          id:"72-6"
-          weightRef:"65-6"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Rest Pause" }
-          ]
-        }
-        {
-          exercise:21
-          id:"72-7"
-          weightRef:"65-7"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Rest Pause" }
-          ]
-        }
-        {
-          exercise:22
-          id:"72-8"
-          weightRef:"65-8"
-          reps: [
-            { name:"10 - 14" }, { name:"10 - 14" }, { name:"10 - 14 Rest Pause" }
-          ]
-        }
-        {
-          exercise:23
-          id:"72-9"
-          weightRef:"65-9"
-          reps: [
-            { name:"10 - 14" }, { name:"10 - 14" }, { name:"10 - 14 Rest Pause" }
-          ]
-        }
-        {
-          exercise:24
-          id:"72-10"
-          weightRef:"65-10"
-          reps: [
-            { name:"10 - 14" }, { name:"10 - 14" }, { name:"10 - 14 Rest Pause" }
-          ]
-        }      
-      ]
-    }
-   {
-      name:"Day 74 -  Shoulders, Traps & Calves"
-      exercises: [
-        {
-          exercise:25
-          id:"74-1"
-          weightRef:"67-1"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Rest Pause" }
-          ]
-        }
-        {
-          exercise:26
-          id:"74-2"
-          weightRef:"67-2"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Rest Pause" }
-          ]
-        }
-        {
-          exercise:27
-          id:"74-3"
-          weightRef:"67-3"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Rest Pause" }
-          ]
-        }
-        {
-          exercise:28
-          id:"74-4"
-          weightRef:"67-4"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Rest Pause" }
-          ]
-        }
-        {
-          exercise:29
-          id:"74-5"
-          weightRef:"67-5"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Rest Pause" }
-          ]
-        }
-        {
-          exercise:14
-          id:"74-6"
-          weightRef:"67-6"
-          reps: [
-            { name:"10 - 14" }, { name:"10 - 14" }, { name:"10 - 14" }, { name:"10 - 14 Rest Pause" }
-          ]
-        }
-        {
-          exercise:13
-          id:"74-7"
-          weightRef:"67-7"
-          reps: [
-            { name:"10 - 14" }, { name:"10 - 14" }, { name:"10 - 14" }, { name:"10 - 14 Rest Pause" }
-          ]
-        }
-     
-      ]
-    }
-    {
-      name:"Day 75 - Legs"
-      exercises: [
-        {
-          exercise:1
-          id:"75-1"
-          weightRef:"68-1"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Rest Pause" }
-          ]
-        }
-        {
-          exercise:4
-          id:"75-2"
-          weightRef:"68-2"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Rest Pause" }
-          ]
-        }
-        {
-          exercise:5
-          id:"75-3"
-          weightRef:"68-3"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Rest Pause" }
-          ]
-        }
-        {
-          exercise:2
-          id:"75-4"
-          weightRef:"68-4"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Rest Pause" }
-          ]
-        }
-        {
-          exercise:3,
-          id:"75-5"
-          weightRef:"68-5"
-          reps: [
-            { name:"6 - 8" }, { name:"6 - 8" }, { name:"6 - 8 Rest Pause" }
-          ]
-        }
-      ]
-    }
+
   ]
 }
+
+
+
+dsl = {
+    phases:[
+      {
+        name:"Phase 3"
+        startDay:57
+        weeks:[
+          {name:"13 - 15"}
+          {name:"9 - 11"}
+          {name:"6 - 8"}
+          {name:"3 - 5"}
+        ]
+        routine:[
+          {
+            name:"Chest, Triceps & Calfs"
+            exercises: [
+              {
+                exercise:6
+                reps:4
+              }
+              {
+                exercise:7
+                id:"71-2"
+                weightRef:"64-2"
+                reps:3
+              }
+              {
+                exercise:8
+                id:"71-3"
+                weightRef:"64-3"
+                reps:3
+              }
+              {
+                exercise:9
+                id:"71-4"
+                weightRef:"64-4"
+                reps:3
+              } 
+              {
+                exercise:10
+                id:"71-5"
+                weightRef:"64-5"
+                reps:4
+              }
+              {
+                exercise:11
+                id:"71-6"
+                weightRef:"64-6"
+                reps: 3
+              }
+              {
+                exercise:12
+                id:"71-7"
+                weightRef:"64-7"
+                reps: 3
+              }
+              {
+                exercise:13
+                id:"71-8"
+                weightRef:"64-8"
+                reps: 4
+              }
+              {
+                exercise:14
+                id:"71-9"
+                weightRef:"64-9"
+                reps: 4
+              }      
+            ]
+          }
+          {
+            name:"Back, Biceps & Abs"
+            exercises: [
+              {
+                exercise:15
+                id:"72-1"
+                weightRef:"65-1"
+                reps:4
+              }
+              {
+                exercise:16
+                id:"72-2"
+                weightRef:"65-2"
+                reps: 4
+              }
+              {
+                exercise:17
+                id:"72-3"
+                weightRef:"65-3"
+                reps: 3
+              }
+              {
+                exercise:18
+                id:"72-4"
+                weightRef:"65-4"
+                reps: 3
+              }
+              {
+                exercise:19
+                id:"72-5"
+                weightRef:"65-5"
+                reps: 3
+              }
+              {
+                exercise:20
+                id:"72-6"
+                weightRef:"65-6"
+                reps: 3
+              }
+              {
+                exercise:21
+                id:"72-7"
+                weightRef:"65-7"
+                reps: 3
+              }
+              {
+                exercise:22
+                id:"72-8"
+                weightRef:"65-8"
+                reps: 3
+              }
+              {
+                exercise:23
+                id:"72-9"
+                weightRef:"65-9"
+                reps: 3
+              }
+              {
+                exercise:24
+                id:"72-10"
+                weightRef:"65-10"
+                reps: 3
+              }      
+            ]
+          }
+         {
+            name:"Shoulders, Traps & Calves"
+            exercises: [
+              {
+                exercise:25
+                id:"74-1"
+                weightRef:"67-1"
+                reps: 4
+              }
+              {
+                exercise:26
+                id:"74-2"
+                weightRef:"67-2"
+                reps: 3
+              }
+              {
+                exercise:27
+                id:"74-3"
+                weightRef:"67-3"
+                reps: 3
+              }
+              {
+                exercise:28
+                id:"74-4"
+                weightRef:"67-4"
+                reps: 3
+              }
+              {
+                exercise:29
+                id:"74-5"
+                weightRef:"67-5"
+                reps: 4
+              }
+              {
+                exercise:14
+                id:"74-6"
+                weightRef:"67-6"
+                reps: 4
+              }
+              {
+                exercise:13
+                id:"74-7"
+                weightRef:"67-7"
+                reps: 4
+              }
+           
+            ]
+          }
+          {
+            name:"Legs"
+            exercises: [
+              {
+                exercise:1
+                id:"75-1"
+                weightRef:"68-1"
+                reps: 4
+              }
+              {
+                exercise:4
+                id:"75-2"
+                weightRef:"68-2"
+                reps: 3
+              }
+              {
+                exercise:5
+                id:"75-3"
+                weightRef:"68-3"
+                reps: 3
+              }
+              {
+                exercise:2
+                id:"75-4"
+                weightRef:"68-4"
+                reps: 4
+              }
+              {
+                exercise:3,
+                id:"75-5"
+                weightRef:"68-5"
+                reps: 3
+              }
+            ]
+          }
+        ]
+      }
+
+    ]
+}
+
+window.data ?= {}
+window.data.exercises = data.exercises
+
+class WorkoutDSLConsumer 
+  constructor: ->
+    @phases = dsl.phases
+    @workoutDays = []
+
+  generateWorkout: ->
+    for phase in @phases
+      @generatePhase(phase)
+
+    @workoutDays
+
+  generatePhase: (phase) ->
+    for week,weekIterator in phase.weeks
+      for day,dayIterator in phase.routine
+        @workoutDays.push @getWorkoutDay day, (weekIterator == 0), (phase.startDay + (weekIterator*7) + dayIterator), week.name
+
+  getWorkoutDay:(day, isFirstWeek, dayNumber, repName) ->
+    exercises = []
+
+    for exercise,i in day.exercises
+
+      reps = []
+
+      for repCount in [1..exercise.reps]
+        reps.push {name:repName}
+
+      exercises.push {
+        exercise:exercise.exercise
+        id:"#{dayNumber}-#{i+1}"
+        weightRef:(if isFirstWeek then false else "#{dayNumber-7}-#{i}")
+        reps: reps
+      }
+
+    {
+      name: "#{day.name}"
+      exercises
+    }
+
+window.data.workouts =  new WorkoutDSLConsumer().generateWorkout()
+
+
+
+
+
+

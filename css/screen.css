@@ -138,15 +138,55 @@ table {
  * Some variables and mixins from Bootstrap (Apache 2 license).
  */
 * {
-  font-family: "Helvetica Neue";
+  font-family: -apple-system-font, "Helvetica Neue";
   box-sizing: border-box;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizelegibility;
-  font-smoothing: antialiased;
+}
+header {
+  display: -webkit-box;
+  display: box;
+  height: 128px;
+  background: rgba(44, 62, 80, 0.91);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 }
 header h1.title {
-  font-size: 14px!important;
+  position: absolute;
+  top: 40px;
+  text-align: center;
+  left: 0;
+  right: 0;
+  display: block;
+  width: 100%;
+  font-weight: 300;
+  font-size: 34px;
+  line-height: 88px;
+  color: white;
+}
+header .button-prev,
+header .button-next {
+  position: relative;
+  font-size: 34px;
+}
+header .button-prev {
+  margin-left: 16px;
+  color: white;
+  font-weight: 200;
+}
+ul.list li {
+  height: 88px;
+  padding: 0 30px;
+  line-height: 88px;
+  border-bottom: 1px solid #c8c7cc;
+  position: relative;
+  font-size: 28px;
+}
+ul.list li .chevron {
+  position: absolute;
+  right: 30px;
+  top: 35px;
 }
 .workout-details:before,
 .workout-details:after {
@@ -197,34 +237,122 @@ header h1.title {
   margin-bottom: 24px;
   text-align: center;
 }
-.content {
-  width: 100%;
-  height: 100%;
+.button-prev,
+.button-next {
+  position: absolute;
+  top: 70px;
+  z-index: 1000;
 }
-.animate-enter,
-.animate-leave {
+.content {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  margin-top: 128px;
+}
+.slide-right .ng-enter,
+.slide-right .ng-leave {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   -webkit-transition: -webkit-transform 0.25s ease-in-out;
   transition: transform 0.25s ease-in-out;
 }
-.animate-enter {
+.slide-right .ng-enter {
   -webkit-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
 }
-.animate-enter.animate-enter-active {
+.slide-right .ng-enter-active {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   -webkit-transition: -webkit-transform 0.25s ease-in-out;
   transition: transform 0.25s ease-in-out;
 }
-.animate-leave {
+.slide-right .ng-leave {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   -webkit-transition: -webkit-transform 0.25s ease-in-out;
   transition: transform 0.25s ease-in-out;
 }
-.animate-leave.animate-leave-active {
+.slide-right .ng-leave-active {
   -webkit-transform: translate3d(-100%, 0, 0);
   transform: translate3d(-100%, 0, 0);
+}
+.slide-left .ng-enter {
+  -webkit-transform: translate3d(0 0, 0) !important;
+  transform: translate3d(0, 0, 0) !important;
+  -webkit-transition: -webkit-transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+.slide-left .ng-enter-active {
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+  opacity: 0;
+}
+.slide-left .ng-leave {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out;
+}
+.slide-left .ng-leave-active {
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+}
+.chevron {
+  display: block;
+  height: 20px;
+}
+.chevron:before {
+  top: 5px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.chevron:after {
+  top: 7px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.chevron:before,
+.chevron:after {
+  position: relative;
+  display: block;
+  width: 12px;
+  height: 4px;
+  background-color: #999;
+  content: '';
+}
+/* Modals
+-------------------------------------------------- */
+.modal {
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  z-index: 11;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  -webkit-transition: -webkit-transform 0.25s ease-in-out, opacity 1ms 0.25s;
+  transition: transform 0.25s ease-in-out, opacity 1ms 0.25s;
+}
+/* Modal - When active
+-------------------------------------------------- */
+.modal.active {
+  opacity: 1;
+  height: 100%;
+  -webkit-transition: -webkit-transform 0.25s ease-in-out;
+  transition: transform 0.25 ease-in-out;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }

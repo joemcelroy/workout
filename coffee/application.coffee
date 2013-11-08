@@ -1,4 +1,4 @@
-angular.module('workout', [])
+angular.module('workout', ['ngAnimate', 'ngTouch'])
 
 .factory "NavService", (WorkoutService) ->
 
@@ -102,7 +102,6 @@ angular.module('workout', [])
       _.find @exercises, (e) -> e.id is exerciseId
 
     completedWorkout: (workout) ->
-      console.log workout
       PersistanceService.getWorkoutExercise(workout.id).length is workout.reps.length
 
 

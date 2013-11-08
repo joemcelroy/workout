@@ -3,20 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>Workout App</title>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <link rel='stylesheet' type='text/css' href="css/ratchet.css" media="all"/>
-    <link rel='stylesheet' type='text/css' href="css/screen.css" media="all" />
+<!--     <link rel='stylesheet' type='text/css' href="css/ratchet.css" media="all"/>
+ -->    <link rel='stylesheet' type='text/css' href="css/screen.css" media="all" />
 
     <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.0-rc.2/angular-animate.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.0-rc.2/angular-touch.min.js"></script>
     <script src="http://underscorejs.org/underscore-min.js"></script>
     <script src="js/application.js"></script>
   </head>
   
-  <body ng-controller="AppCtrl" ng-switch on="NavService.state" ng-animate="animate">
+  <body ng-controller="AppCtrl" ng-switch on="NavService.state" ng-animate ng-class="NavService.slideMotion">
 
     <header class="bar-title">
       <a class="button-prev" ng-show="NavService.isOn('selectWorkout')" ng-click="NavService.backTo('selectDay')">
