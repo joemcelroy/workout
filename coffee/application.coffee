@@ -34,7 +34,6 @@ angular.module('workout', ['ngAnimate', 'ngTouch'])
       WorkoutService.selectWorkout(workout)
       @moveTo("workout")
 
-
   }
 
 
@@ -176,4 +175,10 @@ angular.module('workout', ['ngAnimate', 'ngTouch'])
   $scope.RunWorkoutService = RunWorkoutService
   $scope.WorkoutService = WorkoutService
   $scope.NavService = NavService
+
+  $scope.getCSSClass = ->
+    cssClass = {}
+    cssClass[NavService.slideMotion] = true
+    cssClass['modal-active'] = WeightModal.visible
+    cssClass
 

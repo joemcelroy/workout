@@ -237,27 +237,28 @@ ul.list {
 /* Modals
 -------------------------------------------------- */
 .modal {
-  position: fixed; 
+  position: fixed;
+  display:none; 
   top: 0;
   opacity: 0;
-  z-index: 11; 
+  z-index: 11000; 
   width: 100%;
   min-height: 100%;
   overflow: hidden;
-  background-color: #fff;  
-  -webkit-transform: translate3d(0, 100%, 0);
-          transform: translate3d(0, 100%, 0);
-  -webkit-transition: -webkit-transform .25s ease-in-out, opacity 1ms .25s;
-          transition:         transform .25s ease-in-out, opacity 1ms .25s;
+  background: rgba(255,255,255,0.9);
+  @transition:opacity .5s easein;
+  .transition(@transition);
 }
 
 /* Modal - When active
 -------------------------------------------------- */
 .modal.active {
+  display:block;
   opacity: 1;
   height: 100%;
-  -webkit-transition: -webkit-transform .25s ease-in-out;
-          transition:         transform .25 ease-in-out;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
+}
+
+.modal-active > .content {
+  filter: blur(3px); 
+  -webkit-filter: blur(3px);
 }

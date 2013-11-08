@@ -18,7 +18,7 @@
     <script src="js/application.js"></script>
   </head>
   
-  <body ng-controller="AppCtrl" ng-switch on="NavService.state" ng-animate ng-class="NavService.slideMotion">
+  <body ng-controller="AppCtrl" ng-switch on="NavService.state" ng-animate ng-class="getCSSClass()">
 
     <header class="bar-title">
       <a class="button-prev" ng-show="NavService.isOn('selectWorkout')" ng-click="NavService.backTo('selectDay')">
@@ -71,13 +71,6 @@
     </div>
 
     <div id="what-weight" class="modal" ng-class="{active:WeightModal.visible}">
-      
-      <header class="bar-title">
-        <h1 class="title">Record weight</h1>
-        <a class="button" ng-click="WeightModal.hide()">
-          cancel
-        </a>
-      </header>
 
       <div class="content content-padded" >
         

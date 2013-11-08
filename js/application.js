@@ -638,7 +638,14 @@
     $scope.WeightModal = WeightModal;
     $scope.RunWorkoutService = RunWorkoutService;
     $scope.WorkoutService = WorkoutService;
-    return $scope.NavService = NavService;
+    $scope.NavService = NavService;
+    return $scope.getCSSClass = function() {
+      var cssClass;
+      cssClass = {};
+      cssClass[NavService.slideMotion] = true;
+      cssClass['modal-active'] = WeightModal.visible;
+      return cssClass;
+    };
   });
 
 }).call(this);
